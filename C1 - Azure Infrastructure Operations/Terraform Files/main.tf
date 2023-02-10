@@ -2,7 +2,7 @@ provider "azurerm" {
   features {}
 }
 resource "azurerm_resource_group" "main" {
-  name = ${var.prefix}-RG
+  name = ${var.prefix}-resources
   location = var.location
 }
 resource "azurerm_virtual_network" "main" {
