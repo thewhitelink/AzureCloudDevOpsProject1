@@ -10,7 +10,7 @@
 		"image_publisher": "Canonical",
 		"image_offer": "UbuntuServer",
 		"image_sku": "18.04-LTS",
-		"build_resource_group_name": "project-1-resources"
+		"resource_group_name": "project-1-resources"
 	}],
 	"provisioners": [{
 		"inline": [
