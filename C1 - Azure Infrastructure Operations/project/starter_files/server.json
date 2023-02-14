@@ -1,8 +1,8 @@
 {
 	"variables": {
-		"client_id": "{{env `ARM_CLIENT_ID`}}",
-		"client_secret": "{{env `ARM_CLIENT_SECRET`}}",
-		"subscription_id": "{{env `ARM_SUBSCRIPTION_ID`}}"
+		"client_id": "{{env `3fc42abf-b564-4d74-843d-0912c073e28d`}}",
+		"client_secret": "{{env `8HVl8Q~eYV1LLW_S2F1_5qrw4z-1g2hq_PdIMebUB`}}",
+		"tenant_id": "{{env `f958e84a-92b8-439f-a62d-4f45996b6d07`}}"
 	},
 	"builders": [{
 		"type":"azure-arm",
