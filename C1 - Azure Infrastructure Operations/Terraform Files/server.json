@@ -1,16 +1,21 @@
-{
-	"variables": {
-		"client_id": "{{env `3fc42abf-b564-4d74-843d-0912c073e28d`}}",
-		"client_secret": "{{env `8HVl8Q~eYV1LLW_S2F1_5qrw4z-1g2hq_PdIMebUB`}}",
-		"tenant_id": "{{env `f958e84a-92b8-439f-a62d-4f45996b6d07`}}"
-	},
-	"builders": [{
+	{
+		"builders": [{
+		"client_id": "a1af734c-eec0-4ae5-82af-43a92240e29e",
+		"client_secret": "FNf8Q~4cVgxLOVZeIwRPe-byXr~1ykgCL8o~ydaz",
+		"tenant_id": "f958e84a-92b8-439f-a62d-4f45996b6d07",
+		"subscription_id": "0b72aa91-69d1-4842-8da0-1dbc098c1665",
 		"type":"azure-arm",
+		"managed_image_name":"ubuntuimage",
+		"managed_image_resource_group_name":"project-1-resourcegroup",
 		"os_type":"Linux",
 		"image_publisher": "Canonical",
 		"image_offer": "UbuntuServer",
-		"image_sku": "18.04-LTS",
-		"resource_group_name": "project-1-resources"
+		"image_sku": "18_04-lts-gen2",
+		"location": "South Central US",
+		"vm_size": "Standard_D2s_v3",
+		"azure_tags": {
+			"environment": "Dev"
+		}
 	}],
 	"provisioners": [{
 		"inline": [

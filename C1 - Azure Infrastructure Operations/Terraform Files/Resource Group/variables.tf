@@ -18,6 +18,10 @@ variable "vmnumber" {
   description = "number of VMs"
   default = "3"
 }
+variable "image_id" {
+  description = "The ID for the image to be used on VM"
+  default = "/subscriptions/d06323f0-ffb0-484c-9e89-0ca5e1d58412/resourceGroups/Azuredevops/providers/Microsoft.Compute/images/ubuntuimage"
+}
 variable "client_id" {
   description = ""
   default = "a1af734c-eec0-4ae5-82af-43a92240e29e"
