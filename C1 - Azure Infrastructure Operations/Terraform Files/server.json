@@ -1,0 +1,23 @@
+{
+	"variables": {
+		"client_id": "{{env `3fc42abf-b564-4d74-843d-0912c073e28d`}}",
+		"client_secret": "{{env `8HVl8Q~eYV1LLW_S2F1_5qrw4z-1g2hq_PdIMebUB`}}",
+		"tenant_id": "{{env `f958e84a-92b8-439f-a62d-4f45996b6d07`}}"
+	},
+	"builders": [{
+		"type":"azure-arm",
+		"os_type":"Linux",
+		"image_publisher": "Canonical",
+		"image_offer": "UbuntuServer",
+		"image_sku": "18.04-LTS",
+		"resource_group_name": "project-1-resources"
+	}],
+	"provisioners": [{
+		"inline": [
+			"echo 'Hello, World!' > index.html",
+			"nohup busybox httpd -f -p 80 &"
+		],
+		"inline_shebang": "/bin/sh -x",
+		"type": "shell"
+	}]
+}
