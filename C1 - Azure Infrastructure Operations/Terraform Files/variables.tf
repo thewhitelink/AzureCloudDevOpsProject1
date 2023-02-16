@@ -14,3 +14,7 @@ variable "password" {
   description = "default password for VMs"
   default = "P@ssw0rd!"
 }
+variable "vmnumber" {
+  description = "number of VMs"
+  default = "3"
+}
