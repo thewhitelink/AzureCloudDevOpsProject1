@@ -1,9 +1,9 @@
 	{
 		"builders": [{
-		"client_id": "a1af734c-eec0-4ae5-82af-43a92240e29e",
-		"client_secret": "FNf8Q~4cVgxLOVZeIwRPe-byXr~1ykgCL8o~ydaz",
+		"client_id": "637cc4d9-3e52-405f-9029-6bf9bd2cfa4a",
+		"client_secret": "zxR8Q~GOzShiU~ThPa7SIRyz6AZ30H5Hrra9Vbp_",
 		"tenant_id": "f958e84a-92b8-439f-a62d-4f45996b6d07",
-		"subscription_id": "0b72aa91-69d1-4842-8da0-1dbc098c1665",
+		"subscription_id": "d06323f0-ffb0-484c-9e89-0ca5e1d58412",
 		"type":"azure-arm",
 		"managed_image_name":"ubuntuimage",
 		"managed_image_resource_group_name":"project-1-resourcegroup",
@@ -19,8 +19,8 @@
 	}],
 	"provisioners": [{
 		"inline": [
-			"echo 'Hello, World!' > index.html",
-			"nohup busybox httpd -f -p 80 &"
+			"echo 'Hello, World!' > ~/index.html",
+			"busybox httpd -h ~"
 		],
 		"inline_shebang": "/bin/sh -x",
 		"type": "shell"
