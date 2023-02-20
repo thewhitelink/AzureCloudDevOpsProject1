@@ -78,15 +78,57 @@ resource "azurerm_network_security_group" "nsg" {
   resource_group_name = "${var.prefix}-resourcegroup"
 
   security_rule {
-    name                       = "testrule123"
+    name                       = "denyInternet"
+    priority                   = 4000
+    direction                  = "Inbound"
+    access                     = "Deny"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "10.0.2.0/24"
+  }
+  tags = {
+    environment = "Dev"
+  }
+  security_rule {
+    name                       = "allowAllInboundVNET"
     priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "VirtualNetwork"
+    destination_address_prefix = "VirtualNetwork"
+  }
+  tags = {
+    environment = "Dev"
+  }
+  security_rule {
+    name                       = "allowHTTPtoVM"
+    priority                   = 200
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
+    destination_port_range     = "80"
+    source_address_prefix      = "Internet"
+    destination_address_prefix = "AzureLoadBalancer"
+  }
+  tags = {
+    environment = "Dev"
+  }
+  security_rule {
+    name                       = "alllowOutboundVNET"
+    priority                   = 100
+    direction                  = "Outbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
     destination_port_range     = "*"
-    source_address_prefix      = "10.0.2.0/24"
-    destination_address_prefix = "10.0.2.0/24"
+    source_address_prefix      = "VirtualNetwork"
+    destination_address_prefix = "*"
   }
   tags = {
     environment = "Dev"

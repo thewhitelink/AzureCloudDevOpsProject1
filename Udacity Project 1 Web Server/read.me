@@ -1,0 +1,22 @@
+This project was intended to create automated deployments for Web servers
+
+Note: There is a Resource Group folder nested within that contains the deployment parameters for the Resource Group, so that deploying the packer build will deploy to the
+proper Resource Group, rather than the "default" Azure DevOps resource group
+
+1. Navigate to the vars.tf file and change the variables for client_secret, client_id, tenant_id, and subscription_id to match the
+deployment environment values.
+
+2. run the command: "packer build server.json" from within the directory
+
+3. Run the following: 
+    3a. terraform initialize
+
+    3b. terraform plan
+
+    3c. terraform apply
+
+This will deploy with all of the default parameters.
+
+Note: To adjust the number of servers to be deployed, please go into the vars.tf file 
+Once you are in the vars.tf file located inside of the main "Terraform Files" folder, adjust
+the variable for "vmnumber" and change the "default" parameter to the number of VMs required.
